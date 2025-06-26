@@ -138,11 +138,7 @@ body {
 }
 
 /* Texto */
-.note-title {
-  margin: 0 0 10px;
-  font-size: 1.25rem;
-  color: #333;
-}
+
 .note-text {
   margin: 0;
   white-space: pre-wrap;
@@ -295,11 +291,7 @@ body {
   z-index: 1; 
 }
 
-.note-title {
-  max-height: 3em;      
-  overflow-y: auto;       
-  margin: 0 0 10px;
-}
+
 
 .note-text {
   flex-grow: 1;
@@ -308,13 +300,93 @@ body {
   margin: 0;
 }
 
+.note-title {
 
-.note-title::-webkit-scrollbar,
-.note-text::-webkit-scrollbar {
-  width: 6px;
+  white-space: normal;
+
+
+  max-height: 3em;   
+  overflow-y: auto;    
+  overflow-x: hidden;   
+
+
+  margin: 0 0 10px;
+  padding-right: 4px;  
 }
-.note-title::-webkit-scrollbar-thumb,
-.note-text::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.2);
-  border-radius: 3px;
+
+
+
+
+.app-container {
+  overflow-x: hidden;
+}
+
+
+.note-list {
+  display: grid;
+  gap: 20px;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px; 
+}
+
+@media (max-width: 1200px) {
+  .note-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .note-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .note-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.note-card {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.note-text {
+  white-space: pre-wrap;
+  word-break: break-word; 
+}
+
+.note-text {
+  max-height: 6em;   
+  overflow-y: auto;
+}
+
+
+.note-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  align-items: stretch;    
+}
+
+
+
+.note-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;               
+}
+
+
+.note-text {
+  flex-grow: 1;              
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
