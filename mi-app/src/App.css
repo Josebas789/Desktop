@@ -168,107 +168,6 @@ body {
 
 /* Responsividad*/
 
-@media (max-width: 1200px) {
-  .note-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .note-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .note-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-.bg-controls,
-.toggle-bar,
-.note-form {
-  width: 100%;
-  max-width: 600px;  
-  margin: 0 auto 20px; 
-  box-sizing: border-box;
-}
-
-
-.bg-controls {
-  display: flex;
-  flex-wrap: wrap;     
-  gap: 10px;          
-  justify-content: flex-end;
-}
-
-.bg-controls input,
-.bg-controls button {
-  flex: 1 1 auto;     
-  min-width: 120px;  
-}
-
-.toggle-bar {
-  display: block;
-  text-align: center;
-  padding: 12px 0;
-  background: #007bff;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.toggle-bar:hover {
-  background: #0056b3;
-}
-
-.note-form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.form-group input[type="text"],
-.form-group textarea {
-  width: 100%;        
-  box-sizing: border-box;
-}
-
-@media (max-width: 400px) {
-  .bg-controls input,
-  .bg-controls button {
-    min-width: 100%;   
-  }
-}
-
-.bg-upload {
-  flex: 1 1 auto;
-  min-width: 120px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.bg-upload input[type="file"] {
-  flex: 1 1 auto;
-  min-width: 0;        
-  padding: 6px 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #f0f0f0;
-}
-
-@media (max-width: 400px) {
-  .bg-upload {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .bg-upload input[type="file"] {
-    width: 100%;
-  }
-}
 
 
 /*Inclinacion*/
@@ -300,19 +199,6 @@ body {
   margin: 0;
 }
 
-.note-title {
-
-  white-space: normal;
-
-
-  max-height: 3em;   
-  overflow-y: auto;    
-  overflow-x: hidden;   
-
-
-  margin: 0 0 10px;
-  padding-right: 4px;  
-}
 
 
 
@@ -389,4 +275,153 @@ body {
   overflow-y: auto;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+
+
+.note-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+@media (max-width: 1200px) {
+  .note-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .note-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .note-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.note-text {
+  white-space: pre-wrap;   
+  word-break: break-word;  
+}
+
+
+.bg-controls,
+.toggle-bar,
+.note-form {
+  width: 100%;
+  max-width: 600px;    
+  margin: 0 auto 20px; 
+  box-sizing: border-box;
+}
+
+
+.bg-controls {
+  display: flex;
+  flex-wrap: wrap;     
+  gap: 10px;          
+  justify-content: flex-end;
+}
+
+.bg-controls input,
+.bg-controls button {
+  flex: 1 1 auto;     
+  min-width: 120px;    
+}
+
+
+.toggle-bar {
+  display: block;
+  text-align: center;
+  padding: 12px 0;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.toggle-bar:hover {
+  background: #0056b3;
+}
+
+
+.note-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;    
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 400px) {
+  .bg-controls input,
+  .bg-controls button {
+    min-width: 100%;  
+  }
+}
+
+
+.bg-upload {
+  flex: 1 1 auto;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bg-upload input[type="file"] {
+
+  flex: 1 1 auto;
+  min-width: 0;           
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+
+@media (max-width: 400px) {
+  .bg-upload {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .bg-upload input[type="file"] {
+    width: 100%;
+  }
+}
+
+
+.note-title {
+
+  white-space: normal;
+
+
+  max-height: 3em;       
+  overflow-y: auto;      
+  overflow-x: hidden;    
+
+  margin: 0 0 10px;
+  padding-right: 4px;    
+}
+
+
+.note-title::-webkit-scrollbar {
+  width: 6px;
+}
+.note-title::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
