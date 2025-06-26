@@ -273,3 +273,48 @@ body {
     width: 100%;
   }
 }
+
+
+/*Inclinacion*/
+
+.note-card {
+  transition: transform 0.2s;
+}
+
+
+.note-list .note-card:nth-child(odd) {
+  transform: rotate(1deg);
+}
+
+.note-list .note-card:nth-child(even) {
+  transform: rotate(-1deg);
+}
+
+.note-card:hover {
+  transform: rotate(0deg) scale(1.03);
+  z-index: 1; 
+}
+
+.note-title {
+  max-height: 3em;      
+  overflow-y: auto;       
+  margin: 0 0 10px;
+}
+
+.note-text {
+  flex-grow: 1;
+  max-height: 6em;        
+  overflow-y: auto;   
+  margin: 0;
+}
+
+
+.note-title::-webkit-scrollbar,
+.note-text::-webkit-scrollbar {
+  width: 6px;
+}
+.note-title::-webkit-scrollbar-thumb,
+.note-text::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
