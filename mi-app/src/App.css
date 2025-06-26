@@ -403,21 +403,30 @@ body {
   }
 }
 
+/* Asegúrate de pegar esto AL FINAL de tu App.css, y elimina cualquier otra regla .note-title */
+
 .note-title {
-  /* permite salto de línea normal */
-  white-space: normal;
+  display: block;
+  width: 100%;
 
-  /* altura fija para que aparezca scroll si excede */
-  max-height: 3em;       
-  overflow-y: auto;      /* scroll vertical */
-  overflow-x: hidden;    /* sin scroll horizontal */
+  /* Igual comportamiento que .note-text: salto de línea y quiebre de palabras */
+  white-space: pre-wrap;      /* respeta saltos de línea en tu string */
+  overflow-wrap: break-word;  /* quiebra en espacios, si los hay */
+  word-break: break-word;     /* y quiebra palabras muy largas */
 
-  /* margen/padding para separar del contenido */
+  /* Limita la altura para forzar scroll */
+  max-height: 3em;            /* aprox. 2 líneas */
+  overflow-y: scroll;         /* barra de scroll siempre visible */
+  overflow-x: hidden;
+
+  /* Reserva el espacio de la pista del scrollbar */
+  scrollbar-gutter: stable both-edges;
+
   margin: 0 0 10px;
-  padding-right: 4px;    
+  padding-right: 4px;
 }
 
-/* Estilo opcional de la scrollbar (WebKit) */
+/* Scrollbar vertical (WebKit) */
 .note-title::-webkit-scrollbar {
   width: 6px;
 }
