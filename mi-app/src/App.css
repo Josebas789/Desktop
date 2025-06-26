@@ -403,21 +403,21 @@ body {
   }
 }
 
-
 .note-title {
-
+  /* permite salto de línea normal */
   white-space: normal;
 
-
+  /* altura fija para que aparezca scroll si excede */
   max-height: 3em;       
-  overflow-y: auto;      
-  overflow-x: hidden;    
+  overflow-y: auto;      /* scroll vertical */
+  overflow-x: hidden;    /* sin scroll horizontal */
 
+  /* margen/padding para separar del contenido */
   margin: 0 0 10px;
   padding-right: 4px;    
 }
 
-
+/* Estilo opcional de la scrollbar (WebKit) */
 .note-title::-webkit-scrollbar {
   width: 6px;
 }
