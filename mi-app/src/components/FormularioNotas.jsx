@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 
-function FormularioNotas({ agregarNota }) {
+export default function FormularioNotas({ agregarNota }) {
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [importante, setImportante] = useState(false);
@@ -62,4 +62,3 @@ function FormularioNotas({ agregarNota }) {
   );
 }
 
-export default FormularioNotas;

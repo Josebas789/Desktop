@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-function Notas({ nota, borrarNota }) {
+export default function Notas({ nota, borrarNota }) {
   return (
     <div className={`note-card ${nota.importante ? 'important' : ''}`}>
       <button onClick={() => borrarNota(nota.id)} className="delete-button">✕</button>
@@ -11,4 +11,4 @@ function Notas({ nota, borrarNota }) {
   );
 }
 
-export default Notas;
+

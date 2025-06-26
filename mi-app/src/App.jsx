@@ -9,7 +9,7 @@ const fondosPorDefecto = [
   'https://picsum.photos/id/1035/1920/1080'
 ];
 
-function App() {
+export default function App() {
   const [notas, setNotas] = useState(() => JSON.parse(localStorage.getItem('notas')) || []);
   const [fondo, setFondo] = useState(() => 
     localStorage.getItem('fondoNotas') ||
@@ -27,6 +27,7 @@ function App() {
 
   const agregarNota = nota  => setNotas(n => [...n, nota]);
   const borrarNota  = id    => setNotas(n => n.filter(x => x.id !== id));
+
   const fondoAleatorio = () =>
     setFondo(fondosPorDefecto[Math.floor(Math.random() * fondosPorDefecto.length)]);
 
@@ -70,5 +71,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
